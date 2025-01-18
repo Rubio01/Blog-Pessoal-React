@@ -1,10 +1,10 @@
-
+﻿
 function Home() {
     return (
         <>
-            <div className="bg-gray-900 flex justify-center">
-                <div className='container grid grid-cols-1 md:grid-cols-2 text-white text-center'>
-                    <div className="flex flex-col gap-4 items-center justify-center py-4  ">
+            <div className="bg-indigo-900 flex justify-center h-[79.8vh]">
+                <div className='container grid grid-cols-1 md:grid-cols-2 text-white'>
+                    <div className="flex flex-col gap-4 items-center justify-center py-4 text-center">
                         <h2 className='text-5xl font-bold'>
                             Seja Bem Vinde!
                         </h2>
@@ -13,20 +13,21 @@ function Home() {
                         </p>
 
                         <div className="flex justify-around gap-4">
-                            <div className='rounded text-white 
-                                            border-white border-solid border-2 py-2 px-4
-                                            hover:bg-violet-500 cursor-pointer'
-                            >
+                            <div className='rounded text-white hover:bg-violet-500
+                                            border-white border-solid border-2 py-2 px-4'
+                                >
                                 Nova Postagem
                             </div>
                         </div>
                     </div>
 
-                    <div className="flex justify-center ">
+                    <div className="flex justify-center items-center ">
                         <img
                             src="https://i.imgur.com/fyfri1v.png"
                             alt="Imagem Página Home"
-                            className='w-2/3'
+                            className='w-64 h-64 md:w-80 md:h-80'
+                            
+                            
                         />
                     </div>
                 </div>
