@@ -1,7 +1,7 @@
 import { useState, useEffect, ChangeEvent, FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import Usuario from '../../models/Usuario'
-import { cadastrarUsuario } from '../../services/Services'
+import { cadastrarUsuario } from '../../services/Service'
 import './Cadastro.css'
 import { RotatingLines } from 'react-loader-spinner'
 
@@ -14,11 +14,11 @@ function Cadastro() {
   const[confirmaSenha, setConfirmaSenha] = useState<string>("")
 
   const [usuario, setUsuario] = useState<Usuario>({
-    id: 0,
-    nome: '',
-    usuario: '',
-    senha: '',
-    foto: ''
+    id:0,
+    nome:'',
+    usuario:'',
+    senha:'',
+    foto:''
   })
   
   useEffect(() => {
@@ -51,10 +51,9 @@ function Cadastro() {
       setIsLoading(true)
 
       try{
-        await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario)
+        await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
         alert('Usuário cadastrado com sucesso!')
       }catch(error){
-        console.log(usuario)
         alert('Erro ao cadastrar o usuário!')
       }
     }else{
