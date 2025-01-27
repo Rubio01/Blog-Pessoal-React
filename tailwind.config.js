@@ -6,9 +6,7 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        comic: ['"Comic Sans MS"', 'cursive'], // Adiciona Comic Sans como fonte personalizada
-      },
+      
     },
   },
   plugins: [],
