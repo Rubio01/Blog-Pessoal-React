@@ -47,7 +47,7 @@ function CardPostagem({ postagem }: CardPostagensProps) {
                     </p>
                 </div>
 
-                {/* Theme Tag */}
+                {/* Tema Tag */}
                 <div className="mb-4">
                     <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
                         {postagem.tema?.descricao}
@@ -55,7 +55,7 @@ function CardPostagem({ postagem }: CardPostagensProps) {
                 </div>
 
                 {/* Renderização condicional para o Administrador e para usuários */}
-                {usuario.nome == "Rubio" ? (<div className="flex items-center justify-between pt-4 border-t border-gray-200">
+                {usuario.nome == "Rubio" || usuario.nome == "root" ? (<div className="flex items-center justify-between pt-4 border-t border-gray-200">
                     <button className="flex items-center text-gray-600 hover:text-blue-600 transition-colors">
                         <Heart className="h-5 w-5 mr-1" />
                         <span className="text-sm">Curtir</span>
