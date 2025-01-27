@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthContext";
 import Tema from "../../../models/Temas";
 import { atualizar, buscar, cadastrar } from "../../../services/Service";
+import { ToastAlerta } from "../../../utils/ToastAlerta";
 
 function FormTema() {
 
@@ -31,7 +32,7 @@ function FormTema() {
 
     useEffect(() => {
         if (token === '') {
-            alert('Você precisa estar logado!')
+            ToastAlerta('Você precisa estar logado!', 'info')
             navigate('/')
         }
     }, [token])
@@ -62,12 +63,12 @@ function FormTema() {
                 await atualizar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                alert('O Tema foi atualizado com sucesso!')
+                ToastAlerta('O Tema foi atualizado com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao atualizar o tema.')
+                    ToastAlerta('Erro ao atualizar o tema.', 'erro')
                 }
 
             }
@@ -76,12 +77,12 @@ function FormTema() {
                 await cadastrar(`/temas`, tema, setTema, {
                     headers: { 'Authorization': token }
                 })
-                alert('O Tema foi cadastrado com sucesso!')
+                ToastAlerta('O Tema foi atualizado com sucesso!', 'sucesso')
             } catch (error: any) {
                 if (error.toString().includes('403')) {
                     handleLogout();
                 } else {
-                    alert('Erro ao cadastrar o tema.')
+                    ToastAlerta('Erro ao atualizar o tema.', 'erro')
                 }
 
             }
@@ -97,21 +98,20 @@ function FormTema() {
                 {id === undefined ? 'Cadastrar Tema' : 'Editar Tema'}
             </h1>
 
-            <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovoTema}>
+            <form className="w-3/4 md:w-1/3 flex flex-col gap-4" onSubmit={gerarNovoTema}>
                 <div className="flex flex-col gap-2">
                     <label htmlFor="descricao">Descrição do Tema</label>
                     <input
                         type="text"
                         placeholder="Descreva aqui seu tema"
                         name='descricao'
-                        className="border-2 border-slate-700 rounded p-2"
+                        className="border-l-2 border-b-2 border-slate-700 rounded p-2"
                         value={tema.descricao}
                         onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                     />
                 </div>
                 <button
-                    className="rounded text-slate-100 bg-indigo-400 
-                               hover:bg-indigo-800 w-1/2 py-2 mx-auto flex justify-center"
+                    className="button3d-atualizar w-3/4 mx-auto"
                     type="submit">
                     {isLoading ?
                         <RotatingLines

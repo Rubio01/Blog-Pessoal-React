@@ -1,0 +1,38 @@
+.letra3d {
+    font-weight: bold;
+    color:rgba(255, 255, 255, 0.95);
+    text-shadow: -6px 6px 0px black;
+ 
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  
+  .animate-blink {
+    animation: blink 1s infinite;
+  }
+  
+  .modern-title {
+    @apply text-6xl drop-shadow-[-2px_2px_1px_black] font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#7e9ab5] to-[#d1daf4]
+      hover:from-[#f9e0ff] hover:to-purple-400 
+      cursor-pointer select-none
+      hover:scale-110
+      active:scale-95
+      relative;
+       /* Garante que a altura é proporcional ao tamanho da fonte */
+      min-height: 3.45rem; /* Aproximadamente a altura de um texto com 'text-6xl' */
+      display: inline-block;
+      transition: background-color 0.9s ease, transform 0.3s ease;
+
+      
+      
+  }
+  
+ 
+  
+  
+
+
+

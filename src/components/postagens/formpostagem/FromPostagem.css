@@ -1,0 +1,31 @@
+.button3d-atualizar {
+    position: relative;
+    padding: 0.9rem 4rem;
+    background-color: #9e50e7;
+    color: white;
+    font-weight: bold;
+    font-size: 1.125rem;
+    border-radius: 0.5rem;
+    transform: translate(0, 0);
+    transition: all 300ms;
+    box-shadow: -6px 6px 0px 0px rgb(0, 0, 0);
+}
+
+.button3d-atualizar:hover {
+    background-color: #c5a1e7;
+    box-shadow: -6px 6px 0px 0px rgb(0, 0, 0);
+}
+
+.button3d-atualizar:active {
+    transform: translate(-6px, 6px);
+    box-shadow: none;
+    background-color: #c5a1e7;
+
+}
+
+.button3d-atualizar:focus {
+    transform: translate(-6px, 6px);
+    box-shadow: none;
+    background-color: #c5a1e7;
+
+}

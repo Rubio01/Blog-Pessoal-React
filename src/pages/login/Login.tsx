@@ -33,62 +33,67 @@ function Login() {
         handleLogin(usuarioLogin)
     }
 
+
+
     return (
         <>
-            <div className="flex justify-between items-center font-bold h-screen">
-                <form className="flex justify-center items-center flex-col w-3/4 md:w-1/2 gap-4"
-                    onSubmit={login}>
-                    <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="usuario">Usuário</label>
-                        <input
-                            type="text"
-                            id="usuario"
-                            name="usuario"
-                            placeholder="Usuario"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={usuarioLogin.usuario}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        />
-                    </div>
-                    <div className="flex flex-col w-full">
-                        <label htmlFor="senha">Senha</label>
-                        <input
-                            type="password"
-                            id="senha"
-                            name="senha"
-                            placeholder="Senha"
-                            className="border-2 border-slate-700 rounded p-2"
-                            value={usuarioLogin.senha}
-                            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-                        />
-                    </div>
-                    <button
-                        type='submit'
-                        className="rounded bg-indigo-400 flex justify-center
-                                   hover:bg-indigo-900 text-white w-1/2 py-2">
-                                    
-                        {isLoading ? <RotatingLines
-                            strokeColor="white"
-                            strokeWidth="5"
-                            animationDuration="0.75"
-                            width="24"
-                            visible={true}
-                        /> :
-                            <span>Entrar</span>
-                        }
-                    </button>
+            <div className="flex flex-col font-bold md:h-screen lg:flex-row ">
+                <div className=' w-screen  flex justify-center items-center mr-5'>
+                    <form className="py-10 flex justify-center items-center flex-col gap-4 w-3/4"
+                        onSubmit={login}>
+                        <h2 className="text-slate-900 text-5xl">Entrar</h2>
+                        <div className="flex flex-col w-full">
+                            <label htmlFor="usuario">Usuário</label>
+                            <input
+                                type="text"
+                                id="usuario"
+                                name="usuario"
+                                placeholder="Usuario"
+                                className="border-l-2 border-b-2 border-slate-700 p-2 rounded"
+                                value={usuarioLogin.usuario}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            />
+                        </div>
+                        <div className="flex flex-col w-full">
+                            <label htmlFor="senha">Senha</label>
+                            <input
+                                type="password"
+                                id="senha"
+                                name="senha"
+                                placeholder="Senha"
+                                className="border-l-2 border-b-2 border-slate-700 p-2 rounded "
+                                value={usuarioLogin.senha}
+                                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                            />
+                        </div>
+                        <button
+                            type='submit' className='button3d flex justify-center'
+                        >
 
-                    <hr className="border-slate-800 w-full" />
+                            {isLoading ? <RotatingLines
+                                strokeColor="white"
+                                strokeWidth="5"
+                                animationDuration="0.75"
+                                width="24"
+                                visible={true}
+                            /> :
+                                <span>Entrar</span>
+                            }
+                        </button>
 
-                    <p className='text-center'>
-                        Ainda não tem uma conta?{' '}
-                        <Link to="/cadastro" className="text-indigo-800 hover:underline">
-                            Cadastre-se
-                        </Link>
-                    </p>
-                </form>
-                <div className='fundoLogin'></div>
+                        <hr className="border-slate-800 w-full" />
+
+                        <p className='text-center'>
+                            Ainda não tem uma conta?{' '}
+                            <Link to="/cadastro" className="text-[#4b6b86] hover:underline hover:text-[#b69fec]">
+                                Cadastre-se
+                            </Link>
+                        </p>
+                    </form>
+                </div>
+
+                <video src="https://ik.imagekit.io/hfg98coqx/teste4Login.mp4?updatedAt=1737729301937" loop autoPlay muted></video>
+
             </div>
         </>
     );
