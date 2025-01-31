@@ -43,12 +43,12 @@ function Login() {
                         onSubmit={login}>
                         <h2 className="text-slate-900 text-5xl">Entrar</h2>
                         <div className="flex flex-col w-full">
-                            <label htmlFor="usuario">Usuário</label>
+                            <label htmlFor="e-mail">E-mail</label>
                             <input
                                 type="text"
                                 id="usuario"
                                 name="usuario"
-                                placeholder="Usuario"
+                                placeholder="E-mail"
                                 className="border-l-2 border-b-2 border-slate-700 p-2 rounded"
                                 value={usuarioLogin.usuario}
                                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}

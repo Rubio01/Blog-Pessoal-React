@@ -26,7 +26,7 @@ function CardTemas({ tema }: CardTemasProps) {
                         <Link to={`/deletartema/${tema.id}`} className="text-sm">Deletar</Link>
                     </button>
                 </div>
-
+                    
 
             </div>
 
