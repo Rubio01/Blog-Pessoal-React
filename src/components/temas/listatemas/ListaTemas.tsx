@@ -41,7 +41,7 @@ function ListaTemas() {
 
     return (
         <>
-            <div className="h-screen flex flex-col bg-[#e2ded7]">
+            <div className="h-screen flex flex-col bg-[#dfdfdf]">
                 <div className="flex-1 overflow-y-auto no-scrollbar">
                     <div className="max-w-2xl mx-auto py-4 px-4 sm:px-6 lg:max-w-2xl lg:px-8">
                         {temas.length === 0 ? (

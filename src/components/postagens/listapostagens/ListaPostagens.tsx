@@ -41,7 +41,7 @@ function ListaPostagens() {
     }, [postagens.length]);
 
     return (
-        <div className="h-screen flex flex-col bg-[#e2ded7]">
+        <div className="h-screen flex flex-col bg-[#dfdfdf]">
             {/* Header - você pode adicionar uma barra de navegação aqui se desejar */}
             <div className="bg-[#a1b9d19d] p-4  ">
                 <h1 className="text-2xl font-bold text-center text-[#ffffff]">Feed</h1>
