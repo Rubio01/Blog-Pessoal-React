@@ -11,6 +11,10 @@ interface CardPostagensProps {
 function CardPostagem({ postagem }: CardPostagensProps) {
 
     const { usuario } = useContext(AuthContext)
+
+    const foto = usuario?.foto?.trim() === ""
+        ? "https://imgur.com/1FbI7o4.jpg"
+        : usuario?.foto;
     return (
         <article key={postagem.id} className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
             <div className="p-4 sm:p-6">
@@ -18,7 +22,7 @@ function CardPostagem({ postagem }: CardPostagensProps) {
                 <div className="flex items-center mb-4">
                     <img
                         className="h-10 w-10 rounded-full"
-                        src={`https://api.dicebear.com/7.x/avatars/svg?seed=${postagem.usuario?.nome}`}
+                        src={foto}
                         alt="Avatar"
                     />
                     <div className="ml-3">

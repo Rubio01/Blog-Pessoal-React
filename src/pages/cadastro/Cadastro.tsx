@@ -55,10 +55,10 @@ function Cadastro() {
         await cadastrarUsuario('/usuarios/cadastrar', usuario, setUsuario)
         ToastAlerta('Usuário cadastrado com sucesso!', 'sucesso')
       } catch (error) {
-        ToastAlerta('Erro ao cadastrar o usuário!', 'erro')
+        ToastAlerta('Email Inválido!', 'erro')
       }
     } else {
-      ToastAlerta('Dados do usuário inconsistentes! Verifique as informações do cadastro.', 'info')
+      ToastAlerta('Senha inconsistente! Verifique a senha.', 'erro')
       setUsuario({ ...usuario, senha: '' })
       setConfirmaSenha('')
     }
@@ -91,31 +91,20 @@ function Cadastro() {
                 type="text"
                 id="usuario"
                 name="usuario"
-                placeholder="Usuario"
+                placeholder="exemplo@email.com"
                 className="border-l-2 border-b-2 border-slate-700 rounded p-2"
                 value={usuario.usuario}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               />
             </div>
-            <div className="flex flex-col w-full">
-              <label htmlFor="foto">Foto</label>
-              <input
-                type="text"
-                id="foto"
-                name="foto"
-                placeholder="Foto"
-                className="border-l-2 border-b-2 border-slate-700 rounded p-2"
-                value={usuario.foto}
-                onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-              />
-            </div>
+    
             <div className="flex flex-col w-full">
               <label htmlFor="senha">Senha</label>
               <input
                 type="password"
                 id="senha"
                 name="senha"
-                placeholder="Senha"
+                placeholder="Deve ter pelo menos 8 caracteres"
                 className="border-l-2 border-b-2 border-slate-700 rounded p-2"
                 value={usuario.senha}
                 onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}

@@ -35,7 +35,7 @@ function Home() {
           <div className="w-full mt-10 lg:mx-auto lg:max-w-xl space-y-6 lg:mb-20 text-center lg:text-start">
             <div className="flex items-center justify-center lg:justify-start space-x-2">
               <h2 className="text-4xl md:text-6xl font-bold welcome">
-                Bem Vinde! {usuario.nome}
+                Bem Vindo! {usuario.nome}
               </h2>
             </div>
             
