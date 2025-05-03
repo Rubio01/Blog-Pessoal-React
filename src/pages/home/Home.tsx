@@ -47,7 +47,7 @@ function Home() {
             <p className="text-xl md:text-2xl font-light leading-relaxed text-gray-600">
               Expresse aqui seus pensamentos e opiniões
             </p>
-                        < div className="pt-4">
+                        < div className="pt-4 pb-8">
                        
                             <ModalPostagem />
                         </div>

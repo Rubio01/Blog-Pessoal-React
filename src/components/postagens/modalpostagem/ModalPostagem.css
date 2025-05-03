@@ -35,3 +35,14 @@
   background-color: #aa88ca;
 
 }
+
+.custom-popup {
+  width: 100%;
+  max-width: 800px;
+}
+
+@media (min-width: 768px) {
+  .custom-popup {
+    width: 100%;
+  }
+}
